@@ -39,7 +39,7 @@ if(/\d{5,}/.test(time_string)) {
 
 } else {
   let dateObject = new Date(time_string); 
-  if(dateObject === "Invalid Date") {
+  if(dateObject.toString() === "Invalid Date") {
     res.json({error: "Invalid Date"})
   } else {
     res.json({unix: dateObject.valueOf(), utc: dateObject.toUTCString()});
